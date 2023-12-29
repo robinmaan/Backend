@@ -1,5 +1,5 @@
 import mongoose ,{Schema} from "mongoose";
-import { Jwt } from "jsonwebtoken";
+import  Jwt  from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
 const userSchema = new Schema(
@@ -70,7 +70,7 @@ userSchema.methods.isPasswordCorrect = async function(password){
 }
 // jwt token generated
 userSchema.methods.generatedAccesstoken = function(){
-  return  jwt.sign(
+  return  Jwt.sign(
         {
             _id: this._id,
             email:this.email,
